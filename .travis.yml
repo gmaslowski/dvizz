@@ -1,0 +1,27 @@
+sudo: required
+
+services:
+- docker
+
+language: bash
+
+install:
+- sudo apt update
+- sudo apt install -y qemu qemu-user-static qemu-user binfmt-support
+
+script:
+        #- bower install
+        #- export GOOS=linux
+        #- export CGO_ENABLED=0
+        #- go build -o dvizz-linux-arm
+# prepare qemu
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+# build image
+- docker build -t gmaslowski/rpi-dvizz:latest-arm .
+# push image
+- >
+  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+    docker push gmaslowski/rpi-dvizz:latest-arm
+    docker run --rm -ti weshigbee/manifest-tool --username $DOCKER_USER --password $DOCKER_PASS push from-args --platforms linux/arm --target gmaslowski/rpi-dvizz:latest --template gmaslowski/rpi-dvizz:latest-ARCH
+  fi

@@ -1,5 +1,5 @@
 # build stage: fetch bower dependencies
-FROM node AS bower
+FROM resin/raspberry-pi-node AS bower
 
 WORKDIR /dvizz
 
@@ -9,7 +9,7 @@ RUN npm install -g bower && bower --allow-root install
 
 
 # build stage: dvizz golang binary
-FROM golang AS golang
+FROM resin/raspberry-pi-golang AS golang
 
 WORKDIR /dvizz
 
