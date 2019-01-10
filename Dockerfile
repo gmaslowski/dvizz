@@ -19,7 +19,7 @@ RUN go get -v -d && CGO_ENABLED=0 go build -a -o dvizz
 
 
 # final image
-FROM scratch
+FROM resin/rpi-raspbian:jessie
 
 EXPOSE 6969
 
