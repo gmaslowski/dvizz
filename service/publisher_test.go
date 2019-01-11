@@ -1,12 +1,13 @@
 package service
 
 import (
+	"fmt"
+	"testing"
+
+	"github.com/gmaslowski/dvizz/comms"
+	. "github.com/gmaslowski/dvizz/model"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/mock"
-	. "github.com/eriklupander/dvizz/model"
-	"fmt"
-	"github.com/eriklupander/dvizz/comms"
-	"testing"
 )
 
 // mocks for boltdb and messsaging

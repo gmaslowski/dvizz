@@ -24,11 +24,11 @@ SOFTWARE.
 package main
 
 import (
-	"github.com/eriklupander/dvizz/comms"
-	"github.com/eriklupander/dvizz/service"
-	"github.com/fsouza/go-dockerclient"
 	"log"
 	"sync"
+	"github.com/fsouza/go-dockerclient"
+	"github.com/gmaslowski/dvizz/comms"
+	"github.com/gmaslowski/dvizz/service"
 )
 
 func main() {

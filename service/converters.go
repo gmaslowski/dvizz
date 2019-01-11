@@ -26,7 +26,7 @@ package service
 import (
 	"github.com/ahl5esoft/golang-underscore"
 	"github.com/docker/docker/api/types/swarm"
-	. "github.com/eriklupander/dvizz/model"
+	. "github.com/gmaslowski/dvizz/model"
 	"strconv"
 	"strings"
 )

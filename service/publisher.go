@@ -5,8 +5,8 @@ import (
         "github.com/ahl5esoft/golang-underscore"
         "github.com/fsouza/go-dockerclient"
         "time"
-        "github.com/eriklupander/dvizz/comms"
-        . "github.com/eriklupander/dvizz/model"
+        "github.com/gmaslowski/dvizz/comms"
+        . "github.com/gmaslowski/dvizz/model"
 )
 
 var filters = make(map[string][]string)
