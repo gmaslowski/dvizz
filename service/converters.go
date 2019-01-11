@@ -46,7 +46,7 @@ func convTasks(tasks []swarm.Task) []DTask {
 	if tasks == nil || len(tasks) == 0 {
 		return make([]DTask, 0)
 	}
-	v := underscore.Select(tasks, func(task swarm.Task, _ int) bool {
+	v := underscore.Where(tasks, func(task swarm.Task, _ int) bool {
 		// Make sure we only include items that has a nodeId assigned
 		return task.NodeID != ""
 	})
